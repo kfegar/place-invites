@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue !{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Bienvenue, voici les reservations pour la place invitée</h1>
+
+    <ul>
+        {% for reservation in reservations %}
+        <li>{{ reservation.name }} appartement {{ reservation.flatNumber }}, du {{ reservation.startDate |date('d-m-Y') }} au {{ reservation.endDate |date('d-m-Y') }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
