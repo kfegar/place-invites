@@ -25,9 +25,9 @@ class ReservationRepository extends ServiceEntityRepository
     public function findByNotPassed($value)
     {
         return $this->createQueryBuilder('r')
-            ->andWhere('r.end_date > :val')
+            ->andWhere('r.end_date >= :val')
             ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
+            ->orderBy('r.start_date', 'ASC')
             ->getQuery()
             ->getResult()
         ;
