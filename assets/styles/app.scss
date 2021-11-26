@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-body {
-    font-family: "Roboto";
-}
-h1 {
-    text-align: center;
-}
-.container {
-    max-width: 980px;
-    padding: 30px;
-    margin: 0 auto;
-}
+@import "tailwindcss/base";
 
-.hidden {
-    display: none;
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.calendar {
+	.fc-view-harness {
+		@apply text-3xl;
+		@screen lg {
+			@apply text-base;
+		}
+	}
 }

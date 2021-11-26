@@ -16,7 +16,6 @@ import frLocale from '@fullcalendar/core/locales/fr';
 export default class extends Controller {
     static targets = [ "events", "calendar"]
     connect() {
-        console.log(this.eventsTargets)
         const events = []
         this.eventsTargets.forEach(function(eventTarget){
             let event = {

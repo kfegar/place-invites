@@ -21,6 +21,12 @@
         "@fullcalendar/core": "^5.10.1",
         "@fullcalendar/daygrid": "^5.10.1",
         "@fullcalendar/list": "^5.10.1",
-        "@fullcalendar/timegrid": "^5.10.1"
+        "@fullcalendar/timegrid": "^5.10.1",
+        "autoprefixer": "^10.4.0",
+        "glob-all": "^3.2.1",
+        "path": "^0.12.7",
+        "postcss-loader": "^6.2.0",
+        "purgecss-webpack-plugin": "^4.0.3",
+        "tailwindcss": "^2.2.19"
     }
 }

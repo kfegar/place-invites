@@ -4,9 +4,9 @@
 
 {% block body %}
 
-<div class="container">
-    <h1>Bienvenue, voici les reservations pour la place invitée</h1>
-    <div data-controller="calendar">
+<div class="container mx-auto">
+    <h1 class="text-4xl text-center my-10">Bienvenue, voici les reservations pour la place invitée</h1>
+    <div data-controller="calendar" class="calendar">
         <div data-calendar-target="calendar"></div>
         <div class="hidden">
             {% for reservation in reservations %}
