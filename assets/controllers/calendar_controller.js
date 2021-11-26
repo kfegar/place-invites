@@ -20,7 +20,7 @@ export default class extends Controller {
         const events = []
         this.eventsTargets.forEach(function(eventTarget){
             let event = {
-                title: eventTarget.querySelector('.name').textContent + ' '+eventTarget.querySelector('.flatNumber').textContent,
+                title: eventTarget.querySelector('.name').textContent + ' App N°'+eventTarget.querySelector('.flatNumber').textContent,
                 start: eventTarget.querySelector('.startDate').textContent,
                 end: eventTarget.querySelector('.endDate').textContent,
             }
