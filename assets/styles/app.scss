@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "~reset-css/reset";
 @import "tailwindcss/base";
 
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+html,
+body {
+	@apply text-base;
+}
 
 .calendar {
-	.fc-view-harness {
-		@apply text-3xl;
+	.fc-header-toolbar {
+		@apply text-xs;
 		@screen lg {
-			@apply text-base;
+			@apply text-2xl;
+		}
+	}
+	.fc-view-harness {
+		@apply text-xs;
+		@screen lg {
+			@apply text-2xl;
 		}
 	}
 }

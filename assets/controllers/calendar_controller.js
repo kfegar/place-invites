@@ -25,16 +25,23 @@ export default class extends Controller {
             }
             events.push(event)
         })
+        let headerToolbar = {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,listWeek'
+        }
+        if(window.innerWidth <= 570) {
+            headerToolbar = {
+                left: 'prev,next',
+                right: 'dayGridMonth,timeGridWeek,listWeek'
+            }
+        }
         let calendarEl = this.calendarTarget;
         let calendar = new Calendar(calendarEl, {
             locale: frLocale,
             plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
             initialView: 'listWeek',
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,listWeek'
-            },
+            headerToolbar: headerToolbar,
             events:events
         });
         calendar.render();
