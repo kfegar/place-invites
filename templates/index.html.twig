@@ -14,8 +14,8 @@
                 <div data-calendar-target="events">
                     <div class="name">{{ reservation.name }}</div>
                     <div class="flatNumber">{{ reservation.flatNumber }}</div>
-                    <div class="startDate">{{ reservation.startDate |date('Y-m-d') }}</div>
-                    <div class="endDate">{{ reservation.endDate |date('Y-m-d') }}</div>
+                    <div class="startDate">{{ reservation.startDate |date('Y-m-d H:i') }}</div>
+                    <div class="endDate">{{ reservation.endDate |date('Y-m-d H:i') }}</div>
                 </div>
             {% endfor %}
         </div>
