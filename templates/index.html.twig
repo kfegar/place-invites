@@ -4,13 +4,23 @@
 
 {% block body %}
 
-<div class="example-wrapper">
-    <h1>Bienvenue, voici les reservations pour la place invitée</h1>
+<div class="container mx-auto">
+	<a href="/admin" class="my-5 inline-block bg-blue-500 p-3 hover:underline shadow hover:bg-blue-700 text-white rounded">Gérer les réservation</a>
+    <h1 class="md:text-4xl text-xl text-center my-10">Bienvenue, voici les reservations pour la place invitée</h1>
+    <div data-controller="calendar" class="calendar">
+        <div data-calendar-target="calendar"></div>
+        <div class="hidden">
+            {% for reservation in reservations %}
+                <div data-calendar-target="events">
+                    <div class="name">{{ reservation.name }}</div>
+                    <div class="flatNumber">{{ reservation.flatNumber }}</div>
+                    <div class="startDate">{{ reservation.startDate |date('Y-m-d H:i') }}</div>
+                    <div class="endDate">{{ reservation.endDate |date('Y-m-d H:i') }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
-    <ul>
-        {% for reservation in reservations %}
-        <li>{{ reservation.name }} appartement {{ reservation.flatNumber }}, du {{ reservation.startDate |date('d-m-Y') }} au {{ reservation.endDate |date('d-m-Y') }}</li>
-        {% endfor %}
-    </ul>
 </div>
 {% endblock %}
+

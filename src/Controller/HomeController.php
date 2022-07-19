@@ -15,8 +15,7 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         $now = new \DateTime();
-        $em = $this->getDoctrine()->getManager();
-        $reservationRepository = $em->getRepository(Reservation::class);
+        $reservationRepository = $this->getDoctrine()->getManager()->getRepository(Reservation::class);
         $reservations = $reservationRepository->findByNotPassed($now->format('Y-m-d'));
         return $this->render('index.html.twig', [
             'reservations' => $reservations,
