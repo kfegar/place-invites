@@ -3,10 +3,12 @@
 namespace App\Entity;
 
 use App\Repository\ReservationRepository;
+use App\Validator\ConfirmedSlotIsFree;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ReservationRepository::class)
+ * @ConfirmedSlotIsFree
  */
 class Reservation
 {
@@ -45,18 +47,6 @@ class Reservation
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDate(): ?\DateInterval
-    {
-        return $this->date;
-    }
-
-    public function setDate(\DateInterval $date): self
-    {
-        $this->date = $date;
-
-        return $this;
     }
 
     public function getName(): ?string

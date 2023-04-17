@@ -32,4 +32,15 @@ class ReservationRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+
+    public function checkIfIsAlreadyTaken($start, $end)
+    {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.end_date BETWEEN :start AND :end')
+            ->andWhere('r.start_date BETWEEN :start AND :end')
+            ->setParameter('start', $start)
+            ->setParameter('end', $end)
+            ->getQuery()
+            ->getResult();
+    }
 }
